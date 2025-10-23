@@ -1,0 +1,20 @@
+.next/
+node_modules/
+dist/
+out/
+.env*
+.DS_Store
+
+# heavy assets – keep OUT of git
+public/splats/
+assets/
+gaia/
+*.zip
+*.7z
+*.tar
+*.mp4
+*.mov
+*.glb
+*.obj
+*.ply
+*.bin
