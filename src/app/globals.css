@@ -66,7 +66,7 @@ body.immersive{
 /* Brand */
 .brand{ display:flex; align-items:center; gap:0; color:inherit; text-decoration:none; }
 .brand-mark{ width:36px; height:36px; display:block; }
-.brand-wordmark-wrap{ display:inline-flex; align-items:center; margin-left:-16px; }
+.brand-wordmark-wrap{ display:inline-flex; align-items:center; margin-left:-20px; }
 .brand-wordmark{ height:18px; display:block; }
 @media (max-width: 480px){
   .brand-wordmark{ display:none; } /* keep header compact on phones */
@@ -337,4 +337,5 @@ a:focus-visible, .btn:focus-visible, .input:focus-visible{
     padding:0 16px;
   }
 }
+
 
