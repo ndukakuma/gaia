@@ -8,8 +8,7 @@ export type Avatar = {
 };
 
 const pic = (id: string) => `https://picsum.photos/seed/${encodeURIComponent(id)}/800/600`;
-export const DEFAULT_SPLAT_SRC =
-  "https://huggingface.co/datasets/mkkellogg/gaussian-splats-3d/resolve/main/bonsai/bonsai.splat";
+export const DEFAULT_SPLAT_SRC = "/splats/point_cloud.ply";
 
 /** Default avatars shown on the homepage */
 export const AVATARS_DEFAULT: Record<string, Avatar> = {

@@ -3,11 +3,10 @@
 export default function SiriLoader() {
   return (
     <div className="siri-loader" role="status" aria-label="Loading companion">
-      <div className="siri-core">
-        <span className="siri-arc arc-one" />
-        <span className="siri-arc arc-two" />
-        <span className="siri-arc arc-three" />
-        <span className="siri-glow" />
+      <div className="siri-blob">
+        {[0, 1, 2].map((i) => (
+          <span key={i} style={{ animationDelay: `${i * 0.5}s` }} />
+        ))}
       </div>
       <div className="siri-dots">
         {[0, 1, 2, 3].map((i) => (
