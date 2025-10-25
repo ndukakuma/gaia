@@ -243,18 +243,9 @@ body.immersive{
   background:radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.05) 70%);
   animation:siriPulse 2.2s ease-in-out infinite;
 }
-.siri-dots{
-  display:flex;
-  gap:6px;
-}
-.siri-dot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:#f9fafb;
-  opacity:0.25;
-  animation:siriDots 0.9s ease-in-out infinite;
-}
+.siri-dots{ display:flex; gap:5px; place-items:center; transform:translateY(6px); }
+.siri-dot{ width:6px; height:6px; border-radius:50%; background:rgba(249,250,251,0.2); animation:siriDots 1.2s ease-in-out infinite; }
+.siri-dot{ width:6px; height:6px; border-radius:50%; background:rgba(249,250,251,0.2); animation:siriDots 1.2s ease-in-out infinite; }
 
 @keyframes siriBlobSpin{
   0%{ transform:rotate(0deg) scale(0.95); }
@@ -423,6 +414,8 @@ a:focus-visible, .btn:focus-visible, .input:focus-visible{
     padding:0 16px;
   }
 }
+
+
 
 
 
