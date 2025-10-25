@@ -209,10 +209,10 @@ body.immersive{
   color:#f9fafb;
 }
 .siri-blob{
-  width:74px;
-  height:74px;
+  width:60px;
+  height:60px;
   position:relative;
-  filter:drop-shadow(0 8px 30px rgba(0,0,0,.45));
+  filter:drop-shadow(0 6px 26px rgba(0,0,0,.4));
 }
 .siri-blob span{
   position:absolute;
