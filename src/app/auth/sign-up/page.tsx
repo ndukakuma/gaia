@@ -40,7 +40,7 @@ export default function SignUpPage() {
           <p style={{ color: "#6b7280", fontSize: 14, marginBottom: 6 }}>Gaia Accounts</p>
           <h1 style={{ fontSize: 30, fontWeight: 700, margin: 0 }}>Create an account</h1>
           <p style={{ color: "#6b7280", marginTop: 12 }}>
-            Build, manage, and launch photoreal avatars. Upload capture sets, configure behaviors, and deploy anywhere soon.
+            Build, manage, and launch photoreal companions. Give users a friend who listens, encourages, and adapts across mediums.
           </p>
         </div>
 

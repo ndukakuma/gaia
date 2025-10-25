@@ -71,6 +71,20 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </header>
 
         {children}
+
+        <footer className="site-footer">
+          <div className="container footer-grid">
+            <div>
+              <p style={{ fontSize: 14, color: "#6b7280", marginBottom: 4 }}>Gaia</p>
+              <p style={{ fontSize: 13, color: "#9ca3af", margin: 0 }}>Photoreal avatar studio · Private beta</p>
+            </div>
+            <div className="footer-links">
+              <Link href="/auth/sign-in">Account</Link>
+              <Link href="/create">Create</Link>
+              <Link href="/#community">Community</Link>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );

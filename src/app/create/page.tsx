@@ -43,8 +43,7 @@ export default function CreatePage() {
     <main className="container" style={{ padding: "32px 0 72px" }}>
       <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>Create a new avatar</h1>
       <p style={{ color: "#4b5563", marginBottom: 24, maxWidth: 640 }}>
-        Start with the essentials below. Advanced generation inputs are coming soon, so these controls are shown as placeholders until the
-        pipeline is wired up.
+        Start with the essentials below. We’re focused on heartfelt companions first, but these controls preview the richer tooling we’re rolling out.
       </p>
       <form onSubmit={onSubmit} style={{ maxWidth: 720, display: "grid", gap: 16 }}>
         <label>

@@ -45,7 +45,7 @@ export default function SignInPage() {
           <p style={{ color: "#6b7280", fontSize: 14, marginBottom: 6 }}>Gaia Accounts</p>
           <h1 style={{ fontSize: 30, fontWeight: 700, margin: 0 }}>Sign in</h1>
           <p style={{ color: "#6b7280", marginTop: 12 }}>
-            Use your Gaia account credentials. Face capture uploads, team workspaces, and single sign-on will land soon.
+            Use your Gaia account credentials. Companion syncing, shared memories, and richer feelings are coming online soon.
           </p>
         </div>
 

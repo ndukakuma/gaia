@@ -34,6 +34,27 @@ main{ display:block; }
   backdrop-filter: saturate(180%) blur(8px);
   border-bottom: 1px solid var(--border);
 }
+.site-footer{
+  border-top:1px solid var(--border);
+  padding:32px 0;
+  background:#fff;
+}
+.footer-grid{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.footer-links{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.footer-links a{
+  font-size:14px;
+  color:#6b7280;
+}
 .immersive .site-header{
   display:none;
 }
