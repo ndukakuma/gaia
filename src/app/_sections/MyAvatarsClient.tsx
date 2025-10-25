@@ -1,16 +1,15 @@
-// src/app/_sections/MyAvatarsClient.tsx
 "use client";
 
-import * as React from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "../page.module.css";
 
 type MyAvatar = { id: string; name: string; preview?: string; tags?: string[] };
 
 export default function MyAvatarsClient() {
-  const [items, setItems] = React.useState<MyAvatar[]>([]);
+  const [items, setItems] = useState<MyAvatar[]>([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     try {
       const raw = localStorage.getItem("gaia-my-avatars");
       setItems(raw ? (JSON.parse(raw) as MyAvatar[]) : []);
@@ -22,7 +21,7 @@ export default function MyAvatarsClient() {
   if (!items.length) {
     return (
       <div className={styles.empty}>
-        You haven’t created any avatars yet.{" "}
+        You haven&apos;t created any avatars yet.{" "}
         <Link href="/create" className="nav-link" style={{ fontWeight: 600 }}>
           Create one
         </Link>

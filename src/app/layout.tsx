@@ -1,4 +1,7 @@
 import "./globals.css";
+import type { ReactNode } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -8,31 +11,61 @@ export const metadata = {
   description: "Photoreal avatars.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-       <header className="site-header">
-  <div className="container header-inner">
-    <a href="/" className="brand" aria-label="Gaia Home">
-      {/* icon mark */}
-      <img src="/brand/gaia-logo.svg" alt="Gaia logo" className="brand-mark" />
-      {/* wordmark (SVG text logo) – hides on very small screens */}
-      <img src="/brand/gaia-wordmark.svg" alt="Gaia wordmark" className="brand-wordmark" />
-    </a>
+        <header className="site-header">
+          <div className="header-bar">
+            <div className="header-left">
+              <Link href="/" className="brand" aria-label="Gaia Home">
+                <Image src="/brand/gaia-logo.svg" alt="Gaia logo" className="brand-mark" width={36} height={36} priority />
+                <span className="brand-wordmark-wrap">
+                  <Image src="/brand/gaia-wordmark.svg" alt="Gaia wordmark" className="brand-wordmark" width={136} height={30} priority />
+                </span>
+              </Link>
+            </div>
 
-    <form action="/" method="get" className="search" role="search">
-      <input type="search" name="q" placeholder="Search avatars…" className="input" aria-label="Search avatars" />
-      <button className="btn" type="submit">Search</button>
-    </form>
+            <nav className="header-nav" aria-label="Main navigation">
+              <Link href="/" className="nav-link">
+                Explore
+              </Link>
+              <Link href="/#community" className="nav-link">
+                Community
+              </Link>
+              <Link href="/my" className="nav-link">
+                My Avatars
+              </Link>
+            </nav>
 
-    <nav className="nav">
-      <a href="/my" className="nav-link">My Avatars</a>
-      <a href="/create" className="btn btn-primary">Create</a>
-    </nav>
-  </div>
-</header>
-
+            <div className="header-right">
+              <form action="/" method="get" className="search" role="search">
+                <div className="search-field">
+                  <span className="search-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.6" />
+                      <path d="M13 13L17 17" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                    </svg>
+                  </span>
+                  <input
+                    type="search"
+                    name="q"
+                    id="site-search"
+                    placeholder="Search"
+                    className="input"
+                    aria-label="Search avatars"
+                  />
+                </div>
+              </form>
+              <Link href="/create" className="btn btn-icon" aria-label="Create avatar">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 3V15" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                  <path d="M15 9H3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </header>
 
         {children}
       </body>

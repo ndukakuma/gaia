@@ -17,7 +17,7 @@ export default function GaiaMorph({
 
   useEffect(() => {
     let raf = 0;
-    let t0 = performance.now();
+    const t0 = performance.now();
 
     const loop = (now: number) => {
       const t = ((now - t0) / 1000) * speed;

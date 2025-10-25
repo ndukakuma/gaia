@@ -1,22 +1,31 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "../page.module.css";
 
 type MyAvatar = { id: string; name: string; preview?: string; tags?: string[] };
 
 export default function MyPage() {
-  const [items, setItems] = React.useState<MyAvatar[]>([]);
+  const [items, setItems] = useState<MyAvatar[]>([]);
 
-  React.useEffect(() => {
-    const raw = localStorage.getItem("gaia-my-avatars");
-    setItems(raw ? JSON.parse(raw) : []);
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem("gaia-my-avatars");
+      setItems(raw ? JSON.parse(raw) : []);
+    } catch {
+      setItems([]);
+    }
   }, []);
 
   function remove(id: string) {
-    const next = items.filter(a => a.id !== id);
+    const next = items.filter((a) => a.id !== id);
     setItems(next);
-    localStorage.setItem("gaia-my-avatars", JSON.stringify(next));
+    try {
+      localStorage.setItem("gaia-my-avatars", JSON.stringify(next));
+    } catch {
+      /* ignore */
+    }
   }
 
   return (

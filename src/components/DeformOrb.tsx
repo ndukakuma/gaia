@@ -20,7 +20,7 @@ export default function DeformOrb({
 
   useEffect(() => {
     let raf = 0;
-    let t0 = performance.now();
+    const t0 = performance.now();
 
     const tick = (now: number) => {
       const t = ((now - t0) / 1000) * speed;

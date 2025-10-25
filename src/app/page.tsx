@@ -29,7 +29,7 @@ export default function Home({ searchParams }: { searchParams?: { q?: string } }
     <main className="container">
       <div className={styles.wrap}>
         <div className={styles.row}>
-          <h2 className={styles.sectionTitle}>Default Avatars</h2>
+          <h2 className={styles.sectionTitle}>Featured</h2>
           <Link href="/create" className="btn btn-primary">Create Avatar</Link>
         </div>
         {defaultItems.length ? renderGrid(defaultItems) : <div className={styles.empty}>No matches in defaults.</div>}
