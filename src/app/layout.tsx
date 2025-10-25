@@ -57,6 +57,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   />
                 </div>
               </form>
+              <Link href="/auth/sign-in" className="nav-link">
+                Log in
+              </Link>
               <Link href="/create" className="btn btn-icon" aria-label="Create avatar">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 3V15" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
