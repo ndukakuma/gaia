@@ -65,8 +65,11 @@ export default function Home({ searchParams }: { searchParams?: { q?: string } }
       <section className={styles.hero}>
         <div className={styles.heroText}>
           <p className={styles.betaTag}>Gaia Studio · Private beta</p>
-          <h1>Bring photoreal mentors online in days, not months.</h1>
-          <p>Design lifelike hosts, coaches, and guides using photos, splats, and prompts. Gaia keeps your captures production-ready.</p>
+          <h1>Photoreal companions who feel present, everywhere.</h1>
+          <p>
+            Craft autonomous companions that mirror real people—captured with splats, grounded in memories, and warm enough to feel truly there.
+            Perfect for study buddies, wellness guides, and any moment that needs a familiar face.
+          </p>
           <div className={styles.heroActions}>
             <Link href="/create" className="btn btn-primary">Start creating</Link>
             <Link href="/auth/sign-up" className="btn">Create Gaia account</Link>
@@ -74,11 +77,11 @@ export default function Home({ searchParams }: { searchParams?: { q?: string } }
           <ul className={styles.statList}>
             <li>
               <strong>120+</strong>
-              <span>Studio-ready captures</span>
+              <span>Lifelike companions in motion</span>
             </li>
             <li>
               <strong>45 min</strong>
-              <span>Average publishing time</span>
+              <span>Average time to meet your buddy</span>
             </li>
             <li>
               <strong>Global</strong>
