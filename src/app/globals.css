@@ -209,10 +209,9 @@ body.immersive{
   color:#f9fafb;
 }
 .siri-blob{
-  width:60px;
-  height:60px;
+  width:48px;\\n  height:48px;
   position:relative;
-  filter:drop-shadow(0 6px 26px rgba(0,0,0,.4));
+  filter:drop-shadow(0 4px 18px rgba(0,0,0,.3));
 }
 .siri-blob span{
   position:absolute;
@@ -414,6 +413,9 @@ a:focus-visible, .btn:focus-visible, .input:focus-visible{
     padding:0 16px;
   }
 }
+
+
+
 
 
 
