@@ -206,6 +206,62 @@ body.immersive{
   box-shadow:0 16px 42px rgba(0,0,0,0.35);
   z-index:130;
 }
+.siri-loader{
+  display:grid;
+  gap:12px;
+  place-items:center;
+  color:#f9fafb;
+}
+.siri-wave{
+  width:68px;
+  height:68px;
+  border-radius:50%;
+  position:relative;
+  background:radial-gradient(circle at 30% 20%, rgba(255,255,255,0.9), rgba(255,255,255,0.05));
+  overflow:hidden;
+  animation:siriBlob 3s ease-in-out infinite;
+}
+.siri-wave span{
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% 20%, rgba(255,255,255,0.25), transparent 60%);
+  animation:siriRipple 4s ease-in-out infinite;
+}
+.siri-wave span:nth-child(2){
+  animation-delay:-1.2s;
+  opacity:0.6;
+}
+.siri-wave span:nth-child(3){
+  animation-delay:-2.4s;
+  opacity:0.4;
+}
+.siri-dots{
+  display:flex;
+  gap:6px;
+}
+.siri-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#f9fafb;
+  opacity:0.3;
+  animation:siriDots 0.9s ease-in-out infinite;
+}
+
+@keyframes siriBlob{
+  0%,100%{ transform:scale(1) translateY(0); }
+  30%{ transform:scale(1.05) translateY(-2px); }
+  60%{ transform:scale(0.97) translateY(1px); }
+}
+@keyframes siriRipple{
+  0%{ transform:scale(0.8); opacity:0.7; }
+  60%{ transform:scale(1.2); opacity:0.2; }
+  100%{ transform:scale(1.4); opacity:0; }
+}
+@keyframes siriDots{
+  0%,80%,100%{ transform:translateY(0); opacity:0.3; }
+  40%{ transform:translateY(-3px); opacity:1; }
+}
 .gaia-loading span{
   color:#f9fafb;
   font-size:12px;

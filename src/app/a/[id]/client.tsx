@@ -3,10 +3,10 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import DotNav from '@/components/DotNav';
-import ProgressBar from '@/components/ProgressBar';
 import SplatViewer from '@/components/SplatViewer';
 import DeformOrb from '@/components/DeformOrb';
 import { AVATARS, DEFAULT_SPLAT_SRC } from '@/lib/avatars';
+import SiriLoader from '@/components/SiriLoader';
 
 export default function ClientPage({ id }: { id: string }) {
   const avatar = AVATARS[id];
@@ -27,13 +27,6 @@ export default function ClientPage({ id }: { id: string }) {
 
   // loader state
   const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
-  useEffect(() => {
-    if (!hasSplat || !loading) return;
-    const t = setInterval(() => setProgress((p) => (p < 0.9 ? p + (1 - p) * 0.08 : p)), 120);
-    return () => clearInterval(t);
-  }, [hasSplat, loading]);
-
   // keyboard: Esc -> home (only relevant when in immersive viewer)
   useEffect(() => {
     if (!hasSplat) return;
@@ -188,7 +181,7 @@ export default function ClientPage({ id }: { id: string }) {
 
       {loading && (
         <div className="gaia-loading">
-          <ProgressBar progress={progress} width={160} height={4} />
+          <SiriLoader />
         </div>
       )}
     </div>
