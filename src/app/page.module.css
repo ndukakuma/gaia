@@ -172,19 +172,34 @@
   border:1px solid var(--border);
   background:#fff;
   box-shadow: var(--shadow);
-}
-.testimonialCard blockquote{
-  margin:0 0 12px;
-  color:#111;
-  font-size:1rem;
-  line-height:1.5;
-}
-.testimonialCard figcaption{
   display:flex;
   flex-direction:column;
-  gap:2px;
-  color:#6b7280;
-  font-size:0.9rem;
+  gap:8px;
+}
+.testimonialCard h3{
+  margin:0;
+  font-size:1.05rem;
+}
+.testimonialCard p{
+  margin:0;
+  color:#4b5563;
+  line-height:1.5;
+}
+.playbookHighlights{
+  list-style:none;
+  margin:6px 0 0;
+  padding:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.playbookHighlights li{
+  line-height:1.3;
+  font-size:0.85rem;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#f3f4f6;
+  color:#111;
 }
 
 .cta{
@@ -203,6 +218,21 @@
   display:flex;
   gap:12px;
   flex-wrap:wrap;
+}
+.ctaActions .btn,
+.ctaActions .btn.btn-primary{
+  background:#ffffff;
+  color:#0f172a;
+  border-color:#ffffff;
+  box-shadow:none;
+  filter:none;
+}
+.ctaActions .btn:hover,
+.ctaActions .btn.btn-primary:hover{
+  background:#e5e7eb;
+  color:#0f172a;
+  border-color:#e5e7eb;
+  filter:none;
 }
 
 @media (max-width: 640px){

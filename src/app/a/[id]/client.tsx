@@ -141,7 +141,7 @@ export default function ClientPage({ id }: { id: string }) {
               ),
             },
             {
-              label: follow === 'mouse' ? 'Drive: Follow (on)' : 'Drive: Follow (off)',
+              label: follow === 'mouse' ? 'Click: Follow (on)' : 'Click: Follow (off)',
               onClick: toggleFollow,
               icon: (
                 <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -173,7 +173,6 @@ export default function ClientPage({ id }: { id: string }) {
           roomNear="#1a1a1a"
           roomFar="#0b0b0c"
           onReady={() => {
-            setProgress(1);
             setTimeout(() => setLoading(false), 220);
           }}
         />

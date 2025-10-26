@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 export default function SiriLoader() {
   return (
@@ -10,7 +10,7 @@ export default function SiriLoader() {
       </div>
       <div className="siri-dots">
         {[0, 1, 2, 3].map((i) => (
-          <span key={i} className="siri-dot" style={{ animationDelay: `${i * 0.12}s` }} />
+          <span key={i} className="siri-dot" />
         ))}
       </div>
     </div>

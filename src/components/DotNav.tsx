@@ -62,16 +62,20 @@ export default function DotNav({
       ref={rootRef}
       className={`dotnav ${anchor} ${open ? 'open' : ''}`}
       style={posStyle}
-      onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
       <button
         aria-label="Menu"
         className="dotnav-dot"
+        onMouseEnter={() => setOpen(true)}
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
       />
-      <div className="dotnav-panel" role="menu" aria-hidden={!open}>
+      <div
+        className="dotnav-panel"
+        role="menu"
+        aria-hidden={!open}
+      >
         {header ? <div className="dotnav-header">{header}</div> : null}
         <div className="dotnav-items">
           {items.map((it, i) =>

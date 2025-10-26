@@ -3,12 +3,12 @@ import styles from "./page.module.css";
 import {
   AVATARS_DEFAULT,
   AVATARS_COMMUNITY,
+  DEFAULT_SPLAT_SRC,
   searchAmong,
   type Avatar,
 } from "@/lib/avatars";
 import MyAvatarsClient from "./_sections/MyAvatarsClient";
-import DeformOrb from "@/components/DeformOrb";
-import WaveLoader from "@/components/WaveLoader";
+import HeroGreeter from "@/components/HeroGreeter";
 
 export default function Home({ searchParams }: { searchParams?: { q?: string } }) {
   const q = (searchParams?.q ?? "").toString();
@@ -31,21 +31,21 @@ export default function Home({ searchParams }: { searchParams?: { q?: string } }
     },
   ];
 
-  const testimonials = [
+  const playbooks = [
     {
-      quote: "We spun up dedicated study buddies for our students. They now sit with a friendly face during late-night review sessions.",
-      author: "Mara Chen",
-      role: "Founder, Quiet Hours",
+      title: "Companion care",
+      body: "Pair a photoreal face with memory prompts, mood tracking, and rituals that keep users grounded throughout the day.",
+      highlights: ["Daily check-ins with warm recall", "Scriptable empathy cues for caregivers", "Integrations with journaling apps"],
     },
     {
-      quote: "Our wellness pilots rely on compassionate guides. Gaia let us craft the right tone and visual comfort in just a few hours.",
-      author: "Sanjay Patel",
-      role: "Program Director, Bloom Lab",
+      title: "Creative doubles",
+      body: "Capture artists, hosts, or founders once—then remix wardrobe, lighting, and delivery to show up across launches and live streams.",
+      highlights: ["Wardrobe + environment presets", "Multi-angle splat captures", "Stage-ready playback controls"],
     },
     {
-      quote: "My artist community loves the cinematic companions we share before exhibitions. It’s the perfect blend of tech + empathy.",
-      author: "Rosa Kim",
-      role: "Curator, Vertex",
+      title: "On-demand guides",
+      body: "Use avatars as coaches for onboarding, product support, or workshops. Blend procedural knowledge with a familiar presence.",
+      highlights: ["Context-aware scenes", "Conversational scripting hooks", "Workspace governance + analytics"],
     },
   ];
 
@@ -90,13 +90,7 @@ export default function Home({ searchParams }: { searchParams?: { q?: string } }
           </ul>
         </div>
         <div className={styles.heroVisual}>
-          <div className={styles.visualCard}>
-            <DeformOrb size={160} spin mode="gradient" />
-            <div className={styles.visualOverlay}>
-              <p>Realtime capture</p>
-              <WaveLoader progress={0.65} width={280} height={90} background="rgba(255,255,255,0.06)" />
-            </div>
-          </div>
+          <HeroGreeter src={DEFAULT_SPLAT_SRC} disabled />
         </div>
       </section>
 
@@ -135,18 +129,20 @@ export default function Home({ searchParams }: { searchParams?: { q?: string } }
 
       <section className={styles.testimonials}>
         <div className={styles.sectionHeader}>
-          <p>Trusted by teams shipping immersive work</p>
-          <h2>Field notes from early partners</h2>
+          <p>Launch photoreal AI anywhere</p>
+          <h2>Blueprints for your most requested companions</h2>
         </div>
         <div className={styles.testimonialGrid}>
-          {testimonials.map((t) => (
-            <figure key={t.author} className={styles.testimonialCard}>
-              <blockquote>{t.quote}</blockquote>
-              <figcaption>
-                <strong>{t.author}</strong>
-                <span>{t.role}</span>
-              </figcaption>
-            </figure>
+          {playbooks.map((playbook) => (
+            <article key={playbook.title} className={styles.testimonialCard}>
+              <h3>{playbook.title}</h3>
+              <p>{playbook.body}</p>
+              <ul className={styles.playbookHighlights}>
+                {playbook.highlights.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            </article>
           ))}
         </div>
       </section>
@@ -161,7 +157,7 @@ export default function Home({ searchParams }: { searchParams?: { q?: string } }
         </div>
         <div className={styles.ctaActions}>
           <Link href="/auth/sign-up" className="btn btn-primary">Join the beta</Link>
-          <Link href="/auth/sign-in" className="btn" style={{ borderColor: "rgba(255,255,255,0.4)", color: "#fff" }}>
+          <Link href="/auth/sign-in" className="btn">
             Sign in
           </Link>
         </div>
