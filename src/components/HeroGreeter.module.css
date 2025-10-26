@@ -2,10 +2,18 @@
   position:relative;
   border-radius:32px;
   overflow:hidden;
+  width:min(100%, var(--hero-column-width, clamp(300px, 38vw, 520px)));
+  max-width: clamp(300px, 38vw, 520px);
+  aspect-ratio: 4 / 5;
   min-height:360px;
-  width:100%;
   background:radial-gradient(circle at top,#111,#050505);
   box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+
+@media (min-width: 960px){
+  .heroGreeter{
+    aspect-ratio: 3 / 4;
+  }
 }
 
 .heroGreeter[data-disabled="true"]{
