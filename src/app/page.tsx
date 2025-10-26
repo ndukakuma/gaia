@@ -47,6 +47,11 @@ export default function Home({ searchParams }: { searchParams?: { q?: string } }
       body: "Use avatars as coaches for onboarding, product support, or workshops. Blend procedural knowledge with a familiar presence.",
       highlights: ["Context-aware scenes", "Conversational scripting hooks", "Workspace governance + analytics"],
     },
+    {
+      title: "Live commerce hosts",
+      body: "Spin up shoppable streams with a consistent photoreal host that can swap outfits, languages, or brands instantly.",
+      highlights: ["Wardrobe + brand presets", "Realtime call-to-action overlays", "Localization packs for new regions"],
+    },
   ];
 
   const renderGrid = (items: [string, Avatar][]) => (

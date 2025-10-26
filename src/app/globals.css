@@ -304,6 +304,11 @@ body.immersive{
   letter-spacing:0.36px;
   text-transform:uppercase;
 }
+.gaia-loading-note{
+  font-size:13px;
+  letter-spacing:0.08em;
+  text-transform:none;
+}
 
 .dotnav{
   pointer-events:auto;

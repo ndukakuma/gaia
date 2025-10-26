@@ -13,6 +13,7 @@ export default function ClientPage({ id }: { id: string }) {
   const displayName = avatar?.name ?? id;
   const viewerSrc = useMemo(() => avatar?.file ?? DEFAULT_SPLAT_SRC, [avatar?.file]);
   const hasSplat = Boolean(avatar?.file || avatar?.hasSplat);
+  const persona = avatar?.tags?.slice(0, 2).join(' • ');
 
   // immersive body class only when we render the 3D viewer
   useEffect(() => {
@@ -111,15 +112,18 @@ export default function ClientPage({ id }: { id: string }) {
           header={
             <>
               <Link href="/" className="dotnav-brand">
-                <Image src="/brand/gaia-logo.svg" alt="Gaia logo" width={28} height={28} priority />
+                <Image src="/brand/gaia-logo-white.svg" alt="Gaia logo" width={28} height={28} priority />
                 <span>Gaia Studio</span>
               </Link>
-              <p>Quick controls for navigation and viewer settings.</p>
+              <p>
+                Direct {displayName}
+                {persona ? ` • ${persona}` : ''}. Tweak camera, follow, and backdrop live.
+              </p>
             </>
           }
           items={[
             {
-              label: 'Home',
+              label: 'Back to gallery',
               href: '/',
               icon: (
                 <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -129,7 +133,7 @@ export default function ClientPage({ id }: { id: string }) {
               ),
             },
             {
-              label: 'Reset View',
+              label: `Center ${displayName}`,
               onClick: resetView,
               icon: (
                 <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -141,7 +145,7 @@ export default function ClientPage({ id }: { id: string }) {
               ),
             },
             {
-              label: follow === 'mouse' ? 'Click: Follow (on)' : 'Click: Follow (off)',
+              label: follow === 'mouse' ? `Follow ${displayName}: on` : `Follow ${displayName}: off`,
               onClick: toggleFollow,
               icon: (
                 <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -151,7 +155,7 @@ export default function ClientPage({ id }: { id: string }) {
               ),
             },
             {
-              label: `Background: ${bg[0].toUpperCase()}${bg.slice(1)}`,
+              label: `Backdrop: ${bg[0].toUpperCase()}${bg.slice(1)}`,
               onClick: cycleBg,
               icon: (
                 <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -181,6 +185,7 @@ export default function ClientPage({ id }: { id: string }) {
       {loading && (
         <div className="gaia-loading">
           <SiriLoader />
+          <span className="gaia-loading-note">Connecting to {displayName}</span>
         </div>
       )}
     </div>
