@@ -68,34 +68,45 @@ export default function Home({ searchParams }: { searchParams?: { q?: string } }
   return (
     <main className="container">
       <section className={styles.hero}>
-        <div className={styles.heroText}>
-          <p className={styles.betaTag}>Gaia Studio · Private beta</p>
-          <h1>Photoreal companions who feel present, everywhere.</h1>
-          <p>
-            Craft autonomous companions that mirror real people—captured with splats, grounded in memories, and warm enough to feel truly there.
-            Perfect for study buddies, wellness guides, and any moment that needs a familiar face.
-          </p>
-          <div className={styles.heroActions}>
-            <Link href="/create" className="btn btn-primary">Start creating</Link>
-            <Link href="/auth/sign-up" className="btn">Create Gaia account</Link>
+        <div className={styles.heroBackdrop} aria-hidden="true" />
+        <div className={styles.heroContent}>
+          <div className={styles.heroText}>
+            <p className={styles.betaTag}>Gaia Studio · Private beta</p>
+            <h1>Photoreal companions who feel present, everywhere.</h1>
+            <p>
+              Craft autonomous companions that mirror real people—captured with splats, grounded in memories, and warm enough to feel truly there.
+              Perfect for study buddies, wellness guides, and any moment that needs a familiar face.
+            </p>
+            <div className={styles.heroActions}>
+              <Link href="/create" className="btn btn-primary">Start creating</Link>
+              <Link href="/auth/sign-up" className="btn">Create Gaia account</Link>
+            </div>
+            <ul className={styles.statList}>
+              <li>
+                <strong>120+</strong>
+                <span>Lifelike companions in motion</span>
+              </li>
+              <li>
+                <strong>45 min</strong>
+                <span>Average time to meet your buddy</span>
+              </li>
+              <li>
+                <strong>Global</strong>
+                <span>Creators across 22 countries</span>
+              </li>
+            </ul>
           </div>
-          <ul className={styles.statList}>
-            <li>
-              <strong>120+</strong>
-              <span>Lifelike companions in motion</span>
-            </li>
-            <li>
-              <strong>45 min</strong>
-              <span>Average time to meet your buddy</span>
-            </li>
-            <li>
-              <strong>Global</strong>
-              <span>Creators across 22 countries</span>
-            </li>
-          </ul>
-        </div>
-        <div className={styles.heroVisual}>
-          <HeroGreeter src={DEFAULT_SPLAT_SRC} disabled />
+          <div className={styles.heroVisual}>
+            <div className={styles.heroPanel}>
+              <HeroGreeter src={DEFAULT_SPLAT_SRC} disabled />
+              <div className={styles.heroPanelCard}>
+                <p className={styles.heroPanelTitle}>Live creator preview</p>
+                <p className={styles.heroPanelBody}>
+                  We&apos;re polishing studio capture for partners right now. Bring your own footage or join the concierge queue while we open self-serve.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
